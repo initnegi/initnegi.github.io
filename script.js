@@ -1,84 +1,89 @@
 /* =====================
-   GLITCH CURSOR
+   MODE TOGGLE
 ===================== */
 
-const cursor = document.createElement("div");
-cursor.style.cssText = `
-  position: fixed;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #00f5ff;
-  pointer-events: none;
-  z-index: 9999;
-  box-shadow: 0 0 20px #00f5ff;
-`;
-document.body.appendChild(cursor);
-
-window.addEventListener("mousemove", e => {
-  cursor.style.left = e.clientX - 7 + "px";
-  cursor.style.top = e.clientY - 7 + "px";
-});
+const modeBtn = document.getElementById("modeToggle");
+modeBtn.onclick = () => {
+  document.body.classList.toggle("clean");
+  modeBtn.textContent = document.body.classList.contains("clean")
+    ? "CYBER MODE"
+    : "FAANG MODE";
+};
 
 /* =====================
-   SECTION REVEAL
+   THEME SWITCH
 ===================== */
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
+document.body.dataset.theme = "blue";
+document.getElementById("themeSelect").onchange = e => {
+  document.body.dataset.theme = e.target.value;
+};
+
+/* =====================
+   TERMINAL TYPING INTRO
+===================== */
+
+const lines = [
+  "Booting system...",
+  "Loading projects...",
+  "Solving DSA...",
+  "Launching portfolio..."
+];
+
+let i = 0, j = 0;
+const terminal = document.getElementById("terminalText");
+
+function type() {
+  if (i < lines.length) {
+    if (j < lines[i].length) {
+      terminal.textContent += lines[i][j++];
+    } else {
+      terminal.textContent += "\n";
+      i++; j = 0;
     }
-  });
-}, { threshold: 0.15 });
+    setTimeout(type, 60);
+  }
+}
+type();
 
-document.querySelectorAll("section, .project-card").forEach(el => {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(80px)";
-  el.style.transition = "all 1s cubic-bezier(.16,1,.3,1)";
-  observer.observe(el);
-});
+document.getElementById("skipIntro").onclick = () =>
+  document.getElementById("terminal").style.display = "none";
 
 /* =====================
-   NEON PARTICLES
+   PROJECT MODALS
 ===================== */
 
-const canvas = document.createElement("canvas");
-document.body.appendChild(canvas);
-canvas.style.position = "fixed";
-canvas.style.inset = "0";
-canvas.style.zIndex = "-1";
+const data = {
+  chatsphere: `
+    <h2>ChatSphere</h2>
+    <p>Real-time chat system using WebSockets.</p>
+    <ul>
+      <li>JWT authentication</li>
+      <li>Socket.IO communication</li>
+      <li>Handled disconnects & sync</li>
+    </ul>
+  `,
+  sorting: `
+    <h2>Sorting Visualizer</h2>
+    <p>Visualizes classic algorithms with animations.</p>
+  `,
+  sudoku: `
+    <h2>Sudoku Solver</h2>
+    <p>Backtracking-based solver.</p>
+  `,
+  research: `
+    <h2>Research-Connect</h2>
+    <p>Faculty-student matching platform.</p>
+  `
+};
 
-const ctx = canvas.getContext("2d");
+document.querySelectorAll(".open-modal").forEach(el => {
+  el.onclick = () => {
+    document.getElementById("modalBody").innerHTML =
+      data[el.dataset.project];
+    document.getElementById("projectModal").style.display = "block";
+  };
+});
 
-function resize() {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
-}
-resize();
-addEventListener("resize", resize);
-
-const particles = Array.from({ length: 90 }, () => ({
-  x: Math.random() * innerWidth,
-  y: Math.random() * innerHeight,
-  r: Math.random() * 2 + 1,
-  dx: Math.random() * 0.6,
-  dy: Math.random() * 0.6
-}));
-
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(0,245,255,0.6)";
-    ctx.fill();
-    p.x += p.dx;
-    p.y += p.dy;
-    if (p.x > canvas.width) p.x = 0;
-    if (p.y > canvas.height) p.y = 0;
-  });
-  requestAnimationFrame(animate);
-}
-animate();
+document.getElementById("closeModal").onclick = () =>
+  document.getElementById("projectModal").style.display = "none";

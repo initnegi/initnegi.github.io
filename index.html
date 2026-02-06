@@ -3,21 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chaitanya Negi | Software Engineer Portfolio</title>
+  <title>Chaitanya Negi | Software Engineer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body data-theme="blue">
+<body>
 
-  <!-- THEME CONTROL -->
-  <div class="controls">
-    <select id="themeSelect">
-      <option value="blue">Blue Neon</option>
-      <option value="green">Emerald</option>
-      <option value="orange">Sunset</option>
-      <option value="pink">Rose</option>
-    </select>
-  </div>
+  <!-- BACKGROUND SLIDESHOW -->
+  <div class="bg-slideshow"></div>
 
   <!-- NAVBAR -->
   <nav>
@@ -32,11 +25,11 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero reveal">
     <h2>Hi, I'm Chaitanya 👋</h2>
     <p class="hero-title">Software Engineer in Training | IIT BHU</p>
     <p class="hero-sub">
-      I build scalable systems and enjoy solving hard algorithmic problems.
+      I build scalable systems, love DSA, and enjoy solving hard problems.
     </p>
     <div class="buttons">
       <a href="https://github.com/initnegi" target="_blank">GitHub</a>
@@ -45,62 +38,62 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="reveal">
     <h2>About Me</h2>
     <p>
-      B.Tech student at IIT BHU with strong fundamentals in Data Structures,
-      Algorithms, competitive programming, and full-stack development.
+      B.Tech student at IIT BHU with strong foundations in Data Structures,
+      Algorithms, and system design thinking.
     </p>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 class="reveal">Projects</h2>
 
-    <div class="project-card">
+    <div class="project-card reveal">
       <h3>ChatSphere</h3>
-      <p>Real-time chat application using Socket.IO and JWT authentication.</p>
+      <p>Real-time chat system using WebSockets and JWT authentication.</p>
     </div>
 
-    <div class="project-card">
+    <div class="project-card reveal">
       <h3>Sorting Visualizer</h3>
       <p>Interactive visualization of classic sorting algorithms.</p>
     </div>
 
-    <div class="project-card">
+    <div class="project-card reveal">
       <h3>Sudoku Solver</h3>
-      <p>Backtracking-based Sudoku solver with live UI.</p>
+      <p>Backtracking-based solver with real-time validation.</p>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills">
+  <section id="skills" class="reveal">
     <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>C, C++, JavaScript, Python</li>
-      <li>DSA, OOP</li>
-      <li>React, Node.js, MongoDB</li>
+    <ul>
+      <li>Languages: C, C++, JavaScript, Python</li>
+      <li>Core CS: DSA, OOP</li>
+      <li>Web: React, Node.js, Express, MongoDB</li>
     </ul>
   </section>
 
   <!-- ACHIEVEMENTS -->
-  <section id="achievements">
+  <section id="achievements" class="reveal">
     <h2>Achievements</h2>
     <ul>
-      <li>Codeforces Pupil (1278)</li>
-      <li>HULT Prize National Finalist</li>
-      <li>Inter IIT Basketball Gold</li>
+      <li>500+ DSA problems solved (CF + LeetCode)</li>
+      <li>HULT Prize 2025 National Finalist</li>
+      <li>Inter IIT Basketball Gold Medalist</li>
     </ul>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="reveal">
     <h2>Contact</h2>
     <p>Email: chaitanya.negi.cd.mec23@itbhu.ac.in</p>
   </section>
 
   <footer>
-    <p>Built by Chaitanya | Deployed on GitHub Pages</p>
+    <p>© Chaitanya Negi — Built with intent</p>
   </footer>
 
   <script src="script.js"></script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chaitanya Negi | SDE Portfolio</title>
+  <title>Chaitanya Negi | Software Engineer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,11 +19,14 @@
     </ul>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <h2>Hi, I'm Chaitanya 👋</h2>
-    <p>Aspiring Software Development Engineer | IIT BHU</p>
+    <p class="hero-title">
+      Software Engineer in Training | IIT BHU
+    </p>
     <p class="hero-sub">
-      I love solving problems, competitive programming, and building real-world software.
+      I build scalable web systems and love solving hard algorithmic problems.
     </p>
     <div class="buttons">
       <a href="https://github.com/initnegi" target="_blank">GitHub</a>
@@ -31,22 +34,37 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I'm a B.Tech student at IIT BHU with a strong interest in Software Development,
-      Data Structures & Algorithms, and Competitive Programming.
-      I enjoy building clean, efficient applications and learning by shipping projects.
+      I’m a B.Tech student at IIT BHU who enjoys turning ideas into working software.
+      My core strength lies in Data Structures, Algorithms, and competitive programming
+      (500+ problems solved on Codeforces & LeetCode).
+    </p>
+    <p>
+      I’ve built full-stack applications involving real-time communication,
+      authentication, and interactive visualizations. I care deeply about writing
+      clean, understandable code and learning how real systems scale.
+    </p>
+    <p>
+      Currently, I’m looking for SDE internship opportunities where I can learn from
+      strong engineers and contribute to impactful products.
     </p>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
 
     <div class="project-card">
-      <h3>ChatSphere</h3>
-      <p>Real-time chat application supporting 10+ concurrent users using WebSockets.</p>
-      <p class="tech">React • Node.js • Socket.IO • JWT</p>
+      <h3>ChatSphere — Real-Time Chat Application</h3>
+      <ul>
+        <li>Designed and built a real-time chat system using WebSockets (Socket.IO) supporting 10+ concurrent users with low-latency message delivery.</li>
+        <li>Implemented JWT-based authentication with secure cookie handling for session management and access control.</li>
+        <li>Handled edge cases such as user disconnects and message synchronization.</li>
+      </ul>
+      <p class="tech">React • Node.js • Express • Socket.IO • JWT</p>
       <div class="links">
         <a href="https://github.com/initnegi" target="_blank">GitHub</a>
       </div>
@@ -54,7 +72,11 @@
 
     <div class="project-card">
       <h3>Sorting Algorithm Visualizer</h3>
-      <p>Interactive visualizer for 5+ sorting algorithms with speed and size controls.</p>
+      <ul>
+        <li>Built an interactive visualization tool to demonstrate the inner workings of 5+ classic sorting algorithms.</li>
+        <li>Implemented asynchronous animations to represent comparisons, swaps, and sorted states.</li>
+        <li>Designed a modular JavaScript architecture separating logic, UI, and helper utilities.</li>
+      </ul>
       <p class="tech">HTML • CSS • JavaScript</p>
       <div class="links">
         <a href="https://initnegi.github.io/Algo_Visualizer/" target="_blank">Live</a>
@@ -64,8 +86,12 @@
 
     <div class="project-card">
       <h3>Sudoku Solver Web App</h3>
-      <p>Web-based Sudoku solver using backtracking with real-time validation.</p>
-      <p class="tech">HTML • CSS • JavaScript</p>
+      <ul>
+        <li>Implemented a backtracking-based Sudoku solver capable of solving valid puzzles in real time.</li>
+        <li>Designed a 9×9 interactive grid with real-time validation and instant visual feedback.</li>
+        <li>Deployed using GitHub Pages for cross-platform accessibility.</li>
+      </ul>
+      <p class="tech">JavaScript • HTML • CSS</p>
       <div class="links">
         <a href="https://initnegi.github.io/sudoku_solver_web_app/" target="_blank">Live</a>
         <a href="https://github.com/initnegi" target="_blank">GitHub</a>
@@ -73,9 +99,12 @@
     </div>
 
     <div class="project-card">
-      <h3>Research-Connect</h3>
-      <p>Platform connecting students and faculty based on research interests.</p>
-      <p class="tech">MERN Stack • Team Project</p>
+      <h3>Research-Connect (Team Project)</h3>
+      <ul>
+        <li>Collaborated on building a web platform to connect students and faculty based on shared research interests.</li>
+        <li>Worked on backend–frontend integration to enable portfolio-based matchmaking.</li>
+      </ul>
+      <p class="tech">MERN Stack • Team Collaboration</p>
       <div class="links">
         <a href="https://github.com/COPS-IITBHU/Research-Portal-IITBHU" target="_blank">GitHub</a>
       </div>
@@ -83,28 +112,32 @@
 
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
     <ul class="skills-list">
-      <li>C / C++</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>React</li>
-      <li>Node.js</li>
-      <li>MongoDB</li>
-      <li>Git & GitHub</li>
+      <li><strong>Languages:</strong> C, C++, JavaScript, Python</li>
+      <li><strong>Core CS:</strong> Data Structures, Algorithms, OOP</li>
+      <li><strong>Web:</strong> React, Node.js, Express, MongoDB</li>
+      <li><strong>Tools:</strong> Git, GitHub</li>
     </ul>
+    <p style="margin-top: 15px;">
+      <strong>Problem Solving:</strong> 500+ DSA problems solved across Codeforces & LeetCode
+      (Codeforces Pupil, Max Rating 1278)
+    </p>
   </section>
 
+  <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <h2>Achievements</h2>
     <ul>
-      <li>Codeforces Pupil (1278), solved 500+ problems</li>
-      <li>HULT Prize 2025 National Finalist (Top 5% globally)</li>
+      <li>Codeforces Pupil (Max Rating: 1278), solved 500+ problems</li>
+      <li>HULT Prize 2025 National Finalist (Top 5% globally among 15,000+ teams)</li>
       <li>Inter IIT Basketball Gold Medalist</li>
     </ul>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: chaitanya.negi.cd.mec23@itbhu.ac.in</p>

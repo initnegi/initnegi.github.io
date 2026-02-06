@@ -1,203 +1,125 @@
-/* =====================
-   RESET + BASE
-===================== */
-
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --accent: #4cc9f0;
-}
-
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: system-ui, sans-serif;
   line-height: 1.6;
-  color: #e5e7eb;
-
-  /* accent-aware background */
-  background: radial-gradient(
-    circle at top,
-    color-mix(in srgb, var(--accent) 22%, transparent),
-    #020617 65%
-  );
-
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* =====================
-   THEME VARIABLES
-===================== */
+/* THEMES */
+body[data-theme="blue"] {
+  --bg: #020617;
+  --card: #0f172a;
+  --accent: #4cc9f0;
+  --text: #e5e7eb;
+}
 
-body[data-theme="blue"]   { --accent: #4cc9f0; }
-body[data-theme="green"]  { --accent: #00f5a0; }
-body[data-theme="orange"] { --accent: #ff9f1c; }
-body[data-theme="pink"]   { --accent: #f15bb5; }
-body[data-theme="mono"]   { --accent: #e5e7eb; }
+body[data-theme="green"] {
+  --bg: #020617;
+  --card: #0b2e26;
+  --accent: #00f5a0;
+  --text: #e5e7eb;
+}
 
-/* =====================
-   TYPOGRAPHY
-===================== */
+body[data-theme="orange"] {
+  --bg: #020617;
+  --card: #2a1606;
+  --accent: #ff9f1c;
+  --text: #e5e7eb;
+}
+
+body[data-theme="pink"] {
+  --bg: #020617;
+  --card: #2a0f1e;
+  --accent: #f15bb5;
+  --text: #e5e7eb;
+}
+
+body[data-theme="mono"] {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --text: #0f172a;
+}
+
+/* BASE */
+body {
+  background: var(--bg);
+  color: var(--text);
+}
 
 h1, h2, h3 {
   color: var(--accent);
-  margin-bottom: 12px;
-}
-
-p, li {
-  color: #cbd5f5;
 }
 
 a {
   color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
 }
 
-a:hover {
-  border-bottom-color: var(--accent);
-}
-
-/* =====================
-   NAVBAR
-===================== */
-
+/* NAV */
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 20px 8%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  background: rgba(2, 6, 23, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 nav ul {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 20px;
 }
 
-/* =====================
-   HERO
-===================== */
-
+/* HERO */
 .hero {
-  padding: 120px 8% 80px;
   text-align: center;
-}
-
-.hero h2 {
-  font-size: 2.6rem;
-  text-shadow: 0 0 24px color-mix(in srgb, var(--accent) 60%, transparent);
+  padding: 120px 8% 80px;
 }
 
 .hero-title {
-  font-size: 1.2rem;
   margin-top: 10px;
-}
-
-.hero-sub {
-  max-width: 600px;
-  margin: 15px auto 30px;
-  opacity: 0.9;
 }
 
 .buttons a {
   display: inline-block;
-  margin: 0 10px;
+  margin: 12px;
   padding: 10px 18px;
   border: 1px solid var(--accent);
   border-radius: 8px;
-  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.buttons a:hover {
-  background: var(--accent);
-  color: #020617;
-  transform: translateY(-2px);
-}
-
-/* =====================
-   SECTIONS
-===================== */
-
+/* SECTIONS */
 section {
   padding: 70px 8%;
 }
 
-section h2 {
-  margin-bottom: 20px;
-}
-
-/* =====================
-   PROJECTS
-===================== */
-
+/* PROJECTS */
 .project-card {
-  margin-bottom: 30px;
+  background: var(--card);
   padding: 24px;
-  border-radius: 14px;
-
-  background: rgba(255,255,255,0.04);
+  margin-bottom: 24px;
   border-left: 4px solid var(--accent);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.45),
-    0 0 20px color-mix(in srgb, var(--accent) 30%, transparent);
-}
-
-.project-card h3 {
-  cursor: pointer;
-}
-
-.tech {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* =====================
-   SKILLS / ACHIEVEMENTS
-===================== */
-
-.skills-list li,
-#achievements li {
-  margin-bottom: 8px;
-}
-
-/* =====================
-   FOOTER
-===================== */
-
+/* FOOTER */
 footer {
   padding: 30px;
   text-align: center;
-  font-size: 0.9rem;
   opacity: 0.7;
 }
 
-/* =====================
-   CONTROLS (MODE + THEME)
-===================== */
-
+/* CONTROLS */
 .controls {
   position: fixed;
-  top: 18px;
-  right: 18px;
-  z-index: 2000;
+  top: 20px;
+  right: 20px;
   display: flex;
   gap: 10px;
 }
@@ -205,72 +127,17 @@ footer {
 .controls button,
 .controls select {
   padding: 8px 12px;
-  border-radius: 6px;
-  border: none;
   background: var(--accent);
   color: #020617;
+  border: none;
   font-weight: 600;
   cursor: pointer;
 }
 
-/* =====================
-   TERMINAL INTRO
-===================== */
-
-#terminal {
-  position: fixed;
-  inset: 0;
-  background: black;
-  color: #00ff9c;
-  font-family: monospace;
-  padding: 40px;
-  z-index: 3000;
-}
-
-#skipIntro {
-  margin-top: 20px;
-  padding: 8px 14px;
-}
-
-/* =====================
-   MODAL
-===================== */
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 2500;
-}
-
-.modal-content {
-  background: #0f172a;
-  color: white;
-  padding: 30px;
-  max-width: 700px;
-  margin: 10% auto;
-  border-radius: 14px;
-}
-
-#closeModal {
-  float: right;
-  cursor: pointer;
-  font-size: 24px;
-}
-
-/* =====================
-   FAANG MODE (CLEAN)
-===================== */
-
+/* FAANG MODE */
 body.clean {
   background: #ffffff;
   color: #0f172a;
-}
-
-body.clean nav {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
 }
 
 body.clean h1,
@@ -279,22 +146,7 @@ body.clean h3 {
   color: #0f172a;
 }
 
-body.clean p,
-body.clean li {
-  color: #334155;
-}
-
-body.clean a {
-  color: #2563eb;
-}
-
 body.clean .project-card {
   background: #ffffff;
   border-left: 4px solid #2563eb;
-  box-shadow: none;
 }
-
-body.clean .buttons a {
-  border-color: #2563eb;
-}
-

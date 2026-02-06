@@ -1,29 +1,30 @@
 /* =====================
-   3D TILT EFFECT
+   GLITCH CURSOR
 ===================== */
 
-document.querySelectorAll(".project-card").forEach(card => {
-  card.addEventListener("mousemove", e => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+const cursor = document.createElement("div");
+cursor.style.cssText = `
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00f5ff;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 20px #00f5ff;
+`;
+document.body.appendChild(cursor);
 
-    const rotateX = ((y / rect.height) - 0.5) * -10;
-    const rotateY = ((x / rect.width) - 0.5) * 10;
-
-    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "rotateX(0) rotateY(0)";
-  });
+window.addEventListener("mousemove", e => {
+  cursor.style.left = e.clientX - 7 + "px";
+  cursor.style.top = e.clientY - 7 + "px";
 });
 
 /* =====================
-   SCROLL REVEAL
+   SECTION REVEAL
 ===================== */
 
-const reveal = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = 1;
@@ -34,13 +35,13 @@ const reveal = new IntersectionObserver(entries => {
 
 document.querySelectorAll("section, .project-card").forEach(el => {
   el.style.opacity = 0;
-  el.style.transform = "translateY(60px)";
-  el.style.transition = "all 0.8s ease";
-  reveal.observe(el);
+  el.style.transform = "translateY(80px)";
+  el.style.transition = "all 1s cubic-bezier(.16,1,.3,1)";
+  observer.observe(el);
 });
 
 /* =====================
-   FLOATING PARTICLES
+   NEON PARTICLES
 ===================== */
 
 const canvas = document.createElement("canvas");
@@ -50,31 +51,28 @@ canvas.style.inset = "0";
 canvas.style.zIndex = "-1";
 
 const ctx = canvas.getContext("2d");
-let particles = [];
 
 function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
 }
 resize();
-window.addEventListener("resize", resize);
+addEventListener("resize", resize);
 
-for (let i = 0; i < 60; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: Math.random() * 0.4,
-    dy: Math.random() * 0.4
-  });
-}
+const particles = Array.from({ length: 90 }, () => ({
+  x: Math.random() * innerWidth,
+  y: Math.random() * innerHeight,
+  r: Math.random() * 2 + 1,
+  dx: Math.random() * 0.6,
+  dy: Math.random() * 0.6
+}));
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   particles.forEach(p => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(155,93,229,0.6)";
+    ctx.fillStyle = "rgba(0,245,255,0.6)";
     ctx.fill();
     p.x += p.dx;
     p.y += p.dy;

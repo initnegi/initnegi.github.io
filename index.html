@@ -6,33 +6,45 @@
   <title>Chaitanya Negi | Software Engineer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-   <!-- MODE + THEME CONTROLS -->
-<div class="controls">
-  <button id="modeToggle">FAANG MODE</button>
-  <select id="themeSelect">
-    <option value="blue">Blue Neon</option>
-    <option value="green">Emerald</option>
-    <option value="orange">Sunset</option>
-    <option value="pink">Rose</option>
-    <option value="mono">Minimal Mono</option>
-  </select>
-</div>
 
-<!-- TERMINAL INTRO -->
-<div id="terminal">
-  <pre id="terminalText"></pre>
-  <button id="skipIntro">Skip</button>
-</div>
+<!-- default theme + cyber mode -->
+<body data-theme="blue">
 
-<!-- PROJECT MODAL -->
-<div id="projectModal" class="modal">
-  <div class="modal-content">
-    <span id="closeModal">&times;</span>
-    <div id="modalBody"></div>
+  <!-- =====================
+       MODE + THEME CONTROLS
+  ====================== -->
+  <div class="controls">
+    <button id="modeToggle">FAANG MODE</button>
+    <select id="themeSelect">
+      <option value="blue">Blue Neon</option>
+      <option value="green">Emerald</option>
+      <option value="orange">Sunset</option>
+      <option value="pink">Rose</option>
+      <option value="mono">Minimal Mono</option>
+    </select>
   </div>
-</div>
 
+  <!-- =====================
+       TERMINAL INTRO
+  ====================== -->
+  <div id="terminal">
+    <pre id="terminalText"></pre>
+    <button id="skipIntro">Skip</button>
+  </div>
+
+  <!-- =====================
+       PROJECT MODAL
+  ====================== -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- =====================
+       NAVBAR
+  ====================== -->
   <nav>
     <h1>Chaitanya</h1>
     <ul>
@@ -44,7 +56,9 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- =====================
+       HERO
+  ====================== -->
   <section class="hero">
     <h2>Hi, I'm Chaitanya 👋</h2>
     <p class="hero-title">
@@ -59,7 +73,9 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- =====================
+       ABOUT
+  ====================== -->
   <section id="about">
     <h2>About Me</h2>
     <p>
@@ -78,66 +94,64 @@
     </p>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- =====================
+       PROJECTS
+  ====================== -->
   <section id="projects">
     <h2>Projects</h2>
 
     <div class="project-card">
-      <h3>ChatSphere — Real-Time Chat Application</h3>
+      <h3 class="open-modal" data-project="chatsphere">
+        ChatSphere — Real-Time Chat Application
+      </h3>
       <ul>
-        <li>Designed and built a real-time chat system using WebSockets (Socket.IO) supporting 10+ concurrent users with low-latency message delivery.</li>
-        <li>Implemented JWT-based authentication with secure cookie handling for session management and access control.</li>
-        <li>Handled edge cases such as user disconnects and message synchronization.</li>
+        <li>Designed and built a real-time chat system using WebSockets (Socket.IO) supporting 10+ concurrent users.</li>
+        <li>Implemented JWT-based authentication with secure cookie handling.</li>
+        <li>Handled user disconnects and message synchronization.</li>
       </ul>
       <p class="tech">React • Node.js • Express • Socket.IO • JWT</p>
-      <div class="links">
-        <a href="https://github.com/initnegi" target="_blank">GitHub</a>
-      </div>
     </div>
 
     <div class="project-card">
-      <h3>Sorting Algorithm Visualizer</h3>
+      <h3 class="open-modal" data-project="sorting">
+        Sorting Algorithm Visualizer
+      </h3>
       <ul>
-        <li>Built an interactive visualization tool to demonstrate the inner workings of 5+ classic sorting algorithms.</li>
-        <li>Implemented asynchronous animations to represent comparisons, swaps, and sorted states.</li>
-        <li>Designed a modular JavaScript architecture separating logic, UI, and helper utilities.</li>
+        <li>Visualizes 5+ classic sorting algorithms.</li>
+        <li>Asynchronous animations for swaps and comparisons.</li>
+        <li>Modular JS architecture.</li>
       </ul>
       <p class="tech">HTML • CSS • JavaScript</p>
-      <div class="links">
-        <a href="https://initnegi.github.io/Algo_Visualizer/" target="_blank">Live</a>
-        <a href="https://github.com/initnegi" target="_blank">GitHub</a>
-      </div>
     </div>
 
     <div class="project-card">
-      <h3>Sudoku Solver Web App</h3>
+      <h3 class="open-modal" data-project="sudoku">
+        Sudoku Solver Web App
+      </h3>
       <ul>
-        <li>Implemented a backtracking-based Sudoku solver capable of solving valid puzzles in real time.</li>
-        <li>Designed a 9×9 interactive grid with real-time validation and instant visual feedback.</li>
-        <li>Deployed using GitHub Pages for cross-platform accessibility.</li>
+        <li>Backtracking-based solver.</li>
+        <li>Real-time validation and feedback.</li>
+        <li>Deployed on GitHub Pages.</li>
       </ul>
       <p class="tech">JavaScript • HTML • CSS</p>
-      <div class="links">
-        <a href="https://initnegi.github.io/sudoku_solver_web_app/" target="_blank">Live</a>
-        <a href="https://github.com/initnegi" target="_blank">GitHub</a>
-      </div>
     </div>
 
     <div class="project-card">
-      <h3>Research-Connect (Team Project)</h3>
+      <h3 class="open-modal" data-project="research">
+        Research-Connect (Team Project)
+      </h3>
       <ul>
-        <li>Collaborated on building a web platform to connect students and faculty based on shared research interests.</li>
-        <li>Worked on backend–frontend integration to enable portfolio-based matchmaking.</li>
+        <li>Student–faculty research matchmaking platform.</li>
+        <li>Backend–frontend integration.</li>
       </ul>
       <p class="tech">MERN Stack • Team Collaboration</p>
-      <div class="links">
-        <a href="https://github.com/COPS-IITBHU/Research-Portal-IITBHU" target="_blank">GitHub</a>
-      </div>
     </div>
 
   </section>
 
-  <!-- SKILLS -->
+  <!-- =====================
+       SKILLS
+  ====================== -->
   <section id="skills">
     <h2>Skills</h2>
     <ul class="skills-list">
@@ -152,17 +166,21 @@
     </p>
   </section>
 
-  <!-- ACHIEVEMENTS -->
+  <!-- =====================
+       ACHIEVEMENTS
+  ====================== -->
   <section id="achievements">
     <h2>Achievements</h2>
     <ul>
-      <li>Codeforces Pupil (Max Rating: 1278), solved 500+ problems</li>
-      <li>HULT Prize 2025 National Finalist (Top 5% globally among 15,000+ teams)</li>
+      <li>Codeforces Pupil (1278), 500+ problems solved</li>
+      <li>HULT Prize 2025 National Finalist (Top 5% globally)</li>
       <li>Inter IIT Basketball Gold Medalist</li>
     </ul>
   </section>
 
-  <!-- CONTACT -->
+  <!-- =====================
+       CONTACT
+  ====================== -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: chaitanya.negi.cd.mec23@itbhu.ac.in</p>
@@ -179,5 +197,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-

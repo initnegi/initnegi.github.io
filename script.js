@@ -1,4 +1,15 @@
-// Theme switcher (dark only)
-document.getElementById("themeSelect").addEventListener("change", (e) => {
-  document.body.dataset.theme = e.target.value;
-});
+// SCROLL REVEAL
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+reveals.forEach(r => observer.observe(r));

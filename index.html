@@ -7,44 +7,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<!-- default theme + cyber mode -->
 <body data-theme="blue">
 
-  <!-- =====================
-       MODE + THEME CONTROLS
-  ====================== -->
+  <!-- CONTROLS -->
   <div class="controls">
     <button id="modeToggle">FAANG MODE</button>
     <select id="themeSelect">
-      <option value="blue">Blue Neon</option>
-      <option value="green">Emerald</option>
-      <option value="orange">Sunset</option>
-      <option value="pink">Rose</option>
-      <option value="mono">Minimal Mono</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="orange">Orange</option>
+      <option value="pink">Pink</option>
+      <option value="mono">Mono</option>
     </select>
   </div>
 
-  <!-- =====================
-       TERMINAL INTRO
-  ====================== -->
-  <div id="terminal">
-    <pre id="terminalText"></pre>
-    <button id="skipIntro">Skip</button>
-  </div>
-
-  <!-- =====================
-       PROJECT MODAL
-  ====================== -->
-  <div id="projectModal" class="modal">
-    <div class="modal-content">
-      <span id="closeModal">&times;</span>
-      <div id="modalBody"></div>
-    </div>
-  </div>
-
-  <!-- =====================
-       NAVBAR
-  ====================== -->
   <nav>
     <h1>Chaitanya</h1>
     <ul>
@@ -56,16 +32,11 @@
     </ul>
   </nav>
 
-  <!-- =====================
-       HERO
-  ====================== -->
   <section class="hero">
     <h2>Hi, I'm Chaitanya 👋</h2>
-    <p class="hero-title">
-      Software Engineer in Training | IIT BHU
-    </p>
+    <p class="hero-title">Software Engineer in Training | IIT BHU</p>
     <p class="hero-sub">
-      I build scalable web systems and love solving hard algorithmic problems.
+      I build scalable systems and love solving algorithmic problems.
     </p>
     <div class="buttons">
       <a href="https://github.com/initnegi" target="_blank">GitHub</a>
@@ -73,125 +44,58 @@
     </div>
   </section>
 
-  <!-- =====================
-       ABOUT
-  ====================== -->
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m a B.Tech student at IIT BHU who enjoys turning ideas into working software.
-      My core strength lies in Data Structures, Algorithms, and competitive programming
-      (500+ problems solved on Codeforces & LeetCode).
-    </p>
-    <p>
-      I’ve built full-stack applications involving real-time communication,
-      authentication, and interactive visualizations. I care deeply about writing
-      clean, understandable code and learning how real systems scale.
-    </p>
-    <p>
-      Currently, I’m looking for SDE internship opportunities where I can learn from
-      strong engineers and contribute to impactful products.
+      B.Tech student at IIT BHU with strong fundamentals in DSA, competitive programming,
+      and full-stack development.
     </p>
   </section>
 
-  <!-- =====================
-       PROJECTS
-  ====================== -->
   <section id="projects">
     <h2>Projects</h2>
 
     <div class="project-card">
-      <h3 class="open-modal" data-project="chatsphere">
-        ChatSphere — Real-Time Chat Application
-      </h3>
-      <ul>
-        <li>Designed and built a real-time chat system using WebSockets (Socket.IO) supporting 10+ concurrent users.</li>
-        <li>Implemented JWT-based authentication with secure cookie handling.</li>
-        <li>Handled user disconnects and message synchronization.</li>
-      </ul>
-      <p class="tech">React • Node.js • Express • Socket.IO • JWT</p>
+      <h3>ChatSphere</h3>
+      <p>Real-time chat application using Socket.IO and JWT authentication.</p>
     </div>
 
     <div class="project-card">
-      <h3 class="open-modal" data-project="sorting">
-        Sorting Algorithm Visualizer
-      </h3>
-      <ul>
-        <li>Visualizes 5+ classic sorting algorithms.</li>
-        <li>Asynchronous animations for swaps and comparisons.</li>
-        <li>Modular JS architecture.</li>
-      </ul>
-      <p class="tech">HTML • CSS • JavaScript</p>
+      <h3>Sorting Visualizer</h3>
+      <p>Interactive visualization of classic sorting algorithms.</p>
     </div>
 
     <div class="project-card">
-      <h3 class="open-modal" data-project="sudoku">
-        Sudoku Solver Web App
-      </h3>
-      <ul>
-        <li>Backtracking-based solver.</li>
-        <li>Real-time validation and feedback.</li>
-        <li>Deployed on GitHub Pages.</li>
-      </ul>
-      <p class="tech">JavaScript • HTML • CSS</p>
+      <h3>Sudoku Solver</h3>
+      <p>Backtracking-based Sudoku solver with live UI.</p>
     </div>
-
-    <div class="project-card">
-      <h3 class="open-modal" data-project="research">
-        Research-Connect (Team Project)
-      </h3>
-      <ul>
-        <li>Student–faculty research matchmaking platform.</li>
-        <li>Backend–frontend integration.</li>
-      </ul>
-      <p class="tech">MERN Stack • Team Collaboration</p>
-    </div>
-
   </section>
 
-  <!-- =====================
-       SKILLS
-  ====================== -->
   <section id="skills">
     <h2>Skills</h2>
     <ul class="skills-list">
-      <li><strong>Languages:</strong> C, C++, JavaScript, Python</li>
-      <li><strong>Core CS:</strong> Data Structures, Algorithms, OOP</li>
-      <li><strong>Web:</strong> React, Node.js, Express, MongoDB</li>
-      <li><strong>Tools:</strong> Git, GitHub</li>
+      <li>C, C++, JavaScript, Python</li>
+      <li>DSA, OOP</li>
+      <li>React, Node.js, MongoDB</li>
     </ul>
-    <p style="margin-top: 15px;">
-      <strong>Problem Solving:</strong> 500+ DSA problems solved across Codeforces & LeetCode
-      (Codeforces Pupil, Max Rating 1278)
-    </p>
   </section>
 
-  <!-- =====================
-       ACHIEVEMENTS
-  ====================== -->
   <section id="achievements">
     <h2>Achievements</h2>
     <ul>
-      <li>Codeforces Pupil (1278), 500+ problems solved</li>
-      <li>HULT Prize 2025 National Finalist (Top 5% globally)</li>
-      <li>Inter IIT Basketball Gold Medalist</li>
+      <li>Codeforces Pupil (1278)</li>
+      <li>HULT Prize National Finalist</li>
+      <li>Inter IIT Basketball Gold</li>
     </ul>
   </section>
 
-  <!-- =====================
-       CONTACT
-  ====================== -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: chaitanya.negi.cd.mec23@itbhu.ac.in</p>
-    <p>
-      <a href="https://github.com/initnegi" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/chaitanya-negi-79a3282a6/" target="_blank">LinkedIn</a>
-    </p>
   </section>
 
   <footer>
-    <p>Built with ❤️ by Chaitanya | Deployed on GitHub Pages</p>
+    <p>Built by Chaitanya | GitHub Pages</p>
   </footer>
 
   <script src="script.js"></script>
